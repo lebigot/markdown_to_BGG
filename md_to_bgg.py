@@ -18,6 +18,7 @@ __version__ = "0.9"
 # Regexp for an optional link text ("[link text]"):
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>.*?)\])?'
 
+
 class InternalLinkLongForm(InlineElement):
     """
     Parse BGG internal links in long form.
@@ -48,26 +49,6 @@ class InternalLinkLongForm(InlineElement):
     def __init__(self, match):
         self.link_parts = match.groupdict()
 
-class InternalLinkShortForm(InlineElement):
-    """
-    Parse BGG internal links in short form.
-
-    Example of parsed link: [great boardgame](thing=224517)
-
-    As with the long form, the initial text can be fully omitted:
-
-    You can look at (thing=224517).
-    """
-
-    pattern = OPT_LINK_TEXT + r'\((?P<link_type>.*?)=(?P<object_ID>\d+)\)'
-
-    parse_children = True  # We want the text to be rendered too (italics…)
-
-    priority = 6  # Regular links have a lower priority (5)
-
-    def __init__(self, match):
-        self.link_parts = match.groupdict()
-
 
 class InternalImageLongForm(InlineElement):
     """
@@ -89,29 +70,6 @@ class InternalImageLongForm(InlineElement):
     # We do not want this to be parsed as "!" followed by an internal BGG link
     # (InternalLinkLongForm), because the image URL doesn't map in the same way
     # to the BGG markup (imageid=… instead of image=…):
-    priority = 7
-
-    def __init__(self, match):
-        self.image_info = match.groupdict()
-
-
-class InternalImageShortForm(InlineElement):
-    """
-    Parse a BGG image in short form.
-
-    Example: !(imageid=2355823 small)
-
-    The size at the end is optional.
-    """
-
-    pattern = (
-        "!\("
-        "imageid=(?P<image_ID>.+?)"
-        "(?: +(?P<size>\w+))?"
-        "\)")
-
-    # We don't want this to be understood as "!" followed by an internal link
-    # in short form:
     priority = 7
 
     def __init__(self, match):
@@ -147,22 +105,6 @@ class YouTubeLongForm(InlineElement):
         "https?://.*?youtu.*?"
         "/watch\?v=(?P<video_ID>.+?)"
         "\)")
-
-    def __init__(self, match):
-        self.video_ID = match.group("video_ID")
-
-
-class YouTubeShortForm(InlineElement):
-    """
-    Parse a YouTube video link in short form.
-
-    Example: (youtube=x-J2KzQb5lI)
-    """
-
-    pattern = "\(youtube=(?P<video_ID>.+?)\)"
-
-    # We don't want this to be taken as an internal BGG link in short form:
-    priority = 7
 
     def __init__(self, match):
         self.video_ID = match.group("video_ID")
@@ -264,9 +206,6 @@ class BGGRenderer:
             self.render_children(element),
             link_parts["object_ID"])
 
-    # Both links return the same information.
-    render_internal_link_short_form = render_internal_link_long_form
-
     def render_internal_image_long_form(self, element):
         """
         Render an internal BGG image.
@@ -282,8 +221,6 @@ class BGGRenderer:
             image_info["image_ID"],
             " " + image_info["size"] if image_info["size"] is not None
             else "")
-
-    render_internal_image_short_form = render_internal_image_long_form
 
     def render_external_image(self, element):
         """
@@ -301,16 +238,14 @@ class BGGRenderer:
         """
         return "[youtube={}]".format(element.video_ID)
 
-    render_you_tube_short_form = render_you_tube_long_form
-
 
 # We register the BGG markdown extension: the parser and the renderer are thus
 # bundled together, which makes more sense:
 class BGGExtension:
 
-    elements = [InternalLinkLongForm, InternalLinkShortForm,
-                InternalImageLongForm, InternalImageShortForm, ExternalImage,
-                YouTubeLongForm, YouTubeShortForm]
+    elements = [InternalLinkLongForm,
+                InternalImageLongForm, ExternalImage,
+                YouTubeLongForm]
 
     renderer_mixins=[BGGRenderer]
 
