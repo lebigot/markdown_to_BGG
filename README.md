@@ -22,7 +22,7 @@ Many common Markdown constructs are supported:
 - lists (numbered or not),
 - links (`[search engine](https://google.com)`, with the exact same syntax used for links to BGG itself).
 
-Lists are left untouched, except for numbered lists, which start from the first number:
+Lists are left untouched (as the BGG markup doesn't support them), except for numbered lists, which start from the first number:
 ```
 1. First item
 1. Second item
