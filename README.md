@@ -44,9 +44,8 @@ BGG can **automatically insert the names** of board games, forum threads, etc., 
 This game is similar to (https://boardgamegeek.com/boardgame/224517/brass-birmingham).
 ```
 will produce
-```
-This game is similar to [Brass Birmingham](https://boardgamegeek.com/boardgame/224517/brass-birmingham).
-```
+
+> This game is similar to [Brass Birmingham](https://boardgamegeek.com/boardgame/224517/brass-birmingham).
 
 ### Images
 
