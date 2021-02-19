@@ -5,7 +5,7 @@
 `md_to_bgg.py` is useful for a couple of reasons:
 
 - Markdown is a **much more common** format.
-- Markdown is **easier to use** than the BGG markup, which is quite verbose and requires some cumbersome editing (like when extracting the numeric identifier of a board game from its full URL).
+- Markdown is **easier to use** than the BGG markup, which is **quite verbose** and requires **some cumbersome editing** (like when extracting the numeric identifier of a board game from its full URL).
 
 # Markdown syntax
 
