@@ -43,18 +43,22 @@ BGG can **automatically insert the names** of board games, forum threads, etc., 
 ```
 This game is similar to (https://boardgamegeek.com/boardgame/224517/brass-birmingham).
 ```
+will produce
+```
+This game is similar to [Brass Birmingham](https://boardgamegeek.com/boardgame/224517/brass-birmingham).
+```
 
 ### Images
 
 **Images** on BGG do **not** have any **alternate text**, so this part of the Markdown syntax is similarly **removed**:
 ```
 External image: !(https://github.com/lebigot/markdown_to_BGG/blob/main/markdown.png).
-Internal (BGG) image (same Markdown syntax): !(https://boardgamegeek.com/image/2355823/clockwork-wars).
+BGG image (same Markdown syntax): !(https://boardgamegeek.com/image/2355823/clockwork-wars).
 ```
 
 The [**size**](https://boardgamegeek.com/wiki/page/Forum_Formatting#toc17) of a _BGG_ image can be indicated in a way reminiscent of the BGG markup:
 ```
-Large internal (BGG) image: !(https://boardgamegeek.com/image/2355823/clockwork-wars large).
+Large BGG image: !(https://boardgamegeek.com/image/2355823/clockwork-wars large).
 ```
 (the size names are the same as in [BGG markup](https://boardgamegeek.com/wiki/page/Wiki_Image_Sizes#)).
 
