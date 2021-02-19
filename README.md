@@ -49,7 +49,7 @@ This game is similar to (https://boardgamegeek.com/boardgame/224517/brass-birmin
 **Images** on BGG do **not** have any **alternate text**, so this part of the Markdown syntax is similarly **removed**:
 ```
 External image: !(https://github.com/lebigot/markdown_to_BGG/blob/main/markdown.png).
-Internal (BGG) image: !(https://boardgamegeek.com/image/2355823/clockwork-wars).
+Internal (BGG) image (same Markdown syntax): !(https://boardgamegeek.com/image/2355823/clockwork-wars).
 ```
 
 The [**size**](https://boardgamegeek.com/wiki/page/Forum_Formatting#toc17) of a _BGG_ image can be indicated in a way reminiscent of the BGG markup:
