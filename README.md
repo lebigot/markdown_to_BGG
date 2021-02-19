@@ -91,15 +91,15 @@ The `md_to_bgg.py` **script itself** can simply be **[directly downloaded](md_to
 
 You can convert any file directly with
 ```
-md_to_bgg.py your_file.md
+python md_to_bgg.py your_file.md
 ```
 
 `md_to_bgg.py` will **print** the rendering in BoardGameGeek markup. Under Unix, you can of course save the **result in a file**:
 ```
-md_to_bgg.py your_file.md > your_file.bgg
+python md_to_bgg.py your_file.md > your_file.bgg
 ```
 On a recent enough macOS, you may also copy it to the **clipboard**, for easy pasting into boardgamegeek.com:
 ```
-md_to_bgg.py your_file.md | pbcopy
+python md_to_bgg.py your_file.md | pbcopy
 ```
 
