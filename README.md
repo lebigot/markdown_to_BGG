@@ -16,7 +16,7 @@
 Many common Markdown constructs are supported:
 
 - headers—but only levels 1 (`#`) and 2 (`##`)—,
-- emphasis (`_important`)
+- emphasis (`_important_`)
 - strong emphasis (`**very important**`)
 - quotes (`>`),
 - lists (numbered or not),
@@ -35,12 +35,34 @@ will thus automatically produce:
 
 ## Extended Markdown
 
-BGG can automatically insert the names of board games, forum threads, etc., which is something not handled by standard Markdown links. `md_to_bgg.py` therefore extends Markdown by not requiring any link text, for links to BGG contents:
+### Automatic link name
+
+BGG can **automatically insert the names** of board games, forum threads, etc., which is something not handled by standard Markdown links. `md_to_bgg.py` therefore extends Markdown by **removing the link text**, for links to _BGG_ contents:
 ```
 This game is similar to (https://boardgamegeek.com/boardgame/224517/brass-birmingham).
 ```
 
-…
+### Images
+
+**Images** on BGG do **not** have any **alternate text**, so this part of the Markdown syntax is similarly **removed**:
+```
+External image: !(https://github.com/lebigot/markdown_to_BGG/blob/main/markdown.png).
+Internal (BGG) image: !(https://boardgamegeek.com/image/2355823/clockwork-wars).
+```
+
+The [**size**](https://boardgamegeek.com/wiki/page/Forum_Formatting#toc17) of a _BGG_ image can be indicated in a way reminiscent of the BGG markup:
+```
+Large internal (BGG) image: !(https://boardgamegeek.com/image/2355823/clockwork-wars large).
+```
+(the size names are the same as in [BGG markup](https://boardgamegeek.com/wiki/page/Wiki_Image_Sizes#)).
+
+### Embedded YouTube videos
+
+YouTube videos on BGG don't have any alternate text, so, similarly to images, their Markdown syntax has no link text part:
+```
+Nice intro to Eldritch Horror:
+(https://www.youtube.com/watch?v=x-J2KzQb5lI).
+```
 
 ## Raw BGG markup
 
