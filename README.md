@@ -1,4 +1,4 @@
-`md_to_bgg.py` is a **[Markdown](https://en.wikipedia.org/wiki/Markdown) to [boardgamegeek.com](https://boardgamegeek.com) (BGG) markup converter**.
+`md_to_bgg.py` is a **[Markdown](https://en.wikipedia.org/wiki/Markdown) to [boardgamegeek.com](https://boardgamegeek.com) (BGG) markup converter** (markup used in the forums).
 
 ![Markdown](markdown.png | height=100) ➡️ ![BGG](bgg.jpg | height=100)
 
@@ -35,9 +35,11 @@ will thus automatically produce:
 
 ## Extended Markdown
 
+`md_to_bgg.py` uses an extension of Markdown that handles some specificites of the BGG markup.
+
 ### Automatic link name
 
-BGG can **automatically insert the names** of board games, forum threads, etc., which is something not handled by standard Markdown links. `md_to_bgg.py` therefore extends Markdown by **removing the link text**, for links to _BGG_ contents:
+BGG can **automatically insert the names** of board games, forum threads, etc., which is something not handled by standard Markdown links. `md_to_bgg.py` therefore extends Markdown by **removing the link text part** (`[…]`), for links to _BGG_ contents:
 ```
 This game is similar to (https://boardgamegeek.com/boardgame/224517/brass-birmingham).
 ```
@@ -58,7 +60,7 @@ Large internal (BGG) image: !(https://boardgamegeek.com/image/2355823/clockwork-
 
 ### Embedded YouTube videos
 
-YouTube videos on BGG don't have any alternate text, so, similarly to images, their Markdown syntax has no link text part:
+**YouTube** videos on BGG **don't have any alternate text**, so, similarly to images, their Markdown syntax has **no link text part**:
 ```
 Nice intro to Eldritch Horror:
 (https://www.youtube.com/watch?v=x-J2KzQb5lI).
