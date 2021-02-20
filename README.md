@@ -88,7 +88,7 @@ Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is also po
 pip install marko
 ```
 
-The `md_to_bgg.py` **script itself** can simply be **[directly downloaded](md_to_bgg.py)** (select the **"Raw" version** with the button on top).
+The `md_to_bgg.py` **script** itself can simply be **[directly downloaded](md_to_bgg.py)** (select the **"Raw" version** with the button on top).
 
 # Usage
 
