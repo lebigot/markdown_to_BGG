@@ -16,9 +16,9 @@
 Many common Markdown constructs are supported:
 
 - headers—but only levels 1 (`#`) and 2 (`##`)—,
-- emphasis (`_important_`),
-- strong emphasis (`**very important**`),
-- quotes (`>`),
+- emphasis (`_important_`…),
+- strong emphasis (`**very important**`…),
+- quotes (`> …`),
 - lists (numbered or not),
 - links (`[search engine](https://google.com)`, with the exact same syntax used for links to BGG itself).
 
