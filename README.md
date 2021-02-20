@@ -1,4 +1,4 @@
-`md_to_bgg.py` is a **[Markdown](https://en.wikipedia.org/wiki/Markdown) to [boardgamegeek.com](https://boardgamegeek.com) (BGG) markup converter** (markup used in the forums).
+`md_to_bgg.py` is a **[Markdown](https://en.wikipedia.org/wiki/Markdown) to [boardgamegeek.com](https://boardgamegeek.com) (BGG) markup converter** (this is the markup used in the forums).
 
 ![Markdown](Images/markdown_icon.png) to ![BGG](Images/bgg.jpg)
 
