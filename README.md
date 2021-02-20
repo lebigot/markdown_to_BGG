@@ -11,7 +11,7 @@
 
 ## Standard Markdown
 
-`md_to_bgg.py` uses the more standard [CommonMark](https://commonmark.org) version of Markdown.
+`md_to_bgg.py` uses the more standard [CommonMark](https://commonmark.org/help/) version of Markdown.
 
 Many common Markdown constructs are supported:
 
