@@ -75,7 +75,7 @@ Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is also po
 
 ## Limitations
 
-**Some of the Markdown syntax** is not converted to BGG markup, and is instead **left essentially as is**. If you expect some of the Markdown syntax to produce some specific BGG markup which is not currently covered, don't hesitate to open an Issue on GitHub. In any case, **raw BGG markup** can often be used directly in the Markdown source in order to get the desired effect.
+**Some of the Markdown syntax** is not converted to BGG markup, and is instead **left essentially as is**. If you expect some of the Markdown syntax to produce some specific BGG markup which is not currently covered, don't hesitate to **open an Issue** on GitHub. In any case, **raw BGG markup** can often be used directly in the Markdown source in order to get the desired effect.
 
 # Requirements
 
