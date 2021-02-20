@@ -35,7 +35,7 @@ will thus automatically produce:
 
 ## Extended Markdown
 
-`md_to_bgg.py` extends Markdown so as to handle some specificites of the BGG markup.
+`md_to_bgg.py` extends Markdown so as to handle some specificities of the BGG markup.
 
 ### Automatic link name
 
