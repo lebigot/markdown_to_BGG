@@ -97,7 +97,7 @@ You can convert any file directly with
 python md_to_bgg.py your_file.md
 ```
 
-`md_to_bgg.py` will **print** the rendering in BoardGameGeek markup. Under Unix, you can of course save the **result in a file** and then paste its contents on BGG:
+`md_to_bgg.py` will **print** the rendering in BoardGameGeek markup. Under Unix, you can of course save the **result in a file** and then **paste** its contents on BGG:
 ```
 python md_to_bgg.py your_file.md > your_file.bgg
 ```
