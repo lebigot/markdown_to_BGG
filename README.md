@@ -2,7 +2,7 @@
 
 ![Markdown](Images/markdown_icon.png) to ![BGG](Images/bgg.jpg)
 
-`md_to_bgg.py` is useful for a couple of reasons:
+`md_to_bgg.py` is useful for a few reasons:
 
 1. Markdown is a **much more common** format.
 1. You can write BGG posts and have a **live preview** (through your Markdown editor).
