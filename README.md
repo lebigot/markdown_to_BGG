@@ -4,9 +4,9 @@
 
 `md_to_bgg.py` is useful for a couple of reasons:
 
-- Markdown is a **much more common** format.
-- You can write BGG posts and have a **live preview** (through your Markdown editor).
-- Markdown is **easier to use** than the [BGG markup](https://boardgamegeek.com/wiki/page/Forum_Formatting), which is **quite verbose** and requires **some cumbersome editing** (like when extracting the numeric identifier of a board game from its full URL).
+1. Markdown is a **much more common** format.
+1. You can write BGG posts and have a **live preview** (through your Markdown editor).
+1. Markdown is **easier to use** than the [BGG markup](https://boardgamegeek.com/wiki/page/Forum_Formatting), which is **quite verbose** and requires **some cumbersome editing** (like when extracting the numeric identifier of a board game from its full URL).
 
 # Markdown syntax
 
