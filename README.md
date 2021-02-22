@@ -1,4 +1,4 @@
-`md_to_bgg.py` is a **[Markdown](https://en.wikipedia.org/wiki/Markdown) to [boardgamegeek.com](https://boardgamegeek.com) (BGG) markup converter** (markup used in the forums).
+`md_to_bgg.py` is a **[Markdown](https://en.wikipedia.org/wiki/Markdown) to [boardgamegeek.com](https://boardgamegeek.com) (BGG) markup converter** (this is the markup used in the forums).
 
 ![Markdown](Images/markdown_icon.png) to ![BGG](Images/bgg.jpg)
 
@@ -11,7 +11,7 @@
 
 ## Standard Markdown
 
-`md_to_bgg.py` uses the more standard [CommonMark](https://commonmark.org) version of Markdown.
+`md_to_bgg.py` uses the more standard [CommonMark](https://commonmark.org/help/) version of Markdown.
 
 Many common Markdown constructs are supported:
 
@@ -71,11 +71,11 @@ Nice intro to Eldritch Horror:
 
 ## Raw BGG markup
 
-Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is also possible to **directly insert many BGG markup constructs** in the Markdown source (e.g. `[q="lebigot"]…[/q]`). 
+Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is also possible to **directly insert many BGG markup constructs** in the Markdown source (e.g. `[q="lebigot"]…[/q]`, in most cases). 
 
 ## Limitations
 
-**Some of the Markdown syntax** is not converted to BGG markup, and is instead **left essentially as is**. This part of the syntax is however **probably not used often** in BGG posts. Furthermore, in most cases, the desired **raw BGG markup** can be used directly in the Markdown source.
+**Some of the Markdown syntax** is not converted to BGG markup, and is instead **left essentially as is**. If you expect some of the Markdown syntax to produce some specific BGG markup which is not currently covered, don't hesitate to **open an Issue** on GitHub. In any case, **raw BGG markup** can often be used directly in the Markdown source in order to get the desired effect.
 
 # Requirements
 
@@ -88,7 +88,7 @@ Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is also po
 pip install marko
 ```
 
-The `md_to_bgg.py` **script itself** can simply be **[directly downloaded](md_to_bgg.py)** (select the **"Raw" version** with the button on top).
+The `md_to_bgg.py` **script** itself can simply be **[directly downloaded](md_to_bgg.py)** (select the **"Raw" version** with the button on top).
 
 # Usage
 
@@ -97,7 +97,7 @@ You can convert any file directly with
 python md_to_bgg.py your_file.md
 ```
 
-`md_to_bgg.py` will **print** the rendering in BoardGameGeek markup. Under Unix, you can of course save the **result in a file**:
+`md_to_bgg.py` will **print** the rendering in BoardGameGeek markup. Under Unix, you can of course save the **result in a file** and then **paste** its contents on BGG:
 ```
 python md_to_bgg.py your_file.md > your_file.bgg
 ```
