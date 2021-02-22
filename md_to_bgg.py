@@ -13,7 +13,7 @@ import marko
 import marko.md_renderer
 from marko.inline import InlineElement
 
-__version__ = "0.9"
+__version__ = "0.9.1"
 
 # Regexp for an optional link text ("[link text]"):
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>.*?)\])?'
@@ -36,10 +36,10 @@ class InternalLinkLongForm(InlineElement):
         # without bleeding onto the next kind of link on the same line).
         # We also make provision for different possible boardgamegeek URLs 
         # (https://boardgamegeek.com, https://www.boardgamegeek.com, etc.).
-        '\(https?://.*?boardgamegeek\.com[^)]*'
+        '\(https?://.*?boardgamegeek\.com[^)\s]*'
         
         # The end of the regexp is here for links like …/article/123#123:
-        '/(?P<link_type>.*?)/(?P<object_ID>\d+).*?'
+        '/(?P<link_type>\S*?)/(?P<object_ID>\d+)\S*?'
         '\)')
 
     parse_children = True  # We want the text to be rendered too (italics…)
@@ -62,9 +62,9 @@ class InternalImageLongForm(InlineElement):
     
     pattern = (
         "!\("
-        "https?://.*?boardgamegeek.com.*?"
-        "/image/(?P<image_ID>\d+).*?"
-        "(?: +(?P<size>\w+))?"
+        "https?://\S*?boardgamegeek.com\S*?"
+        "/image/(?P<image_ID>\d+)\S*?"
+        "(?: +(?P<size>\S+))?"
         "\)")
 
     # We do not want this to be parsed as "!" followed by an internal BGG link
@@ -84,7 +84,7 @@ class ExternalImage(InlineElement):
     !(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
     """
 
-    pattern = "!\((?P<image_URL>.*?)\)"
+    pattern = "!\((?P<image_URL>\S*?)\)"
 
     def __init__(self, match):
         self.image_URL = match.group("image_URL")
@@ -102,8 +102,8 @@ class YouTubeLongForm(InlineElement):
     pattern = (
         "\("
         # YouTube can have URLs like https://youtu.be…:
-        "https?://.*?youtu.*?"
-        "/watch\?v=(?P<video_ID>.+?)"
+        "https?://\S*?youtu\S*?"
+        "/watch\?v=(?P<video_ID>\S+?)"
         "\)")
 
     def __init__(self, match):
