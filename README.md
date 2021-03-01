@@ -72,7 +72,7 @@ Nice intro to Eldritch Horror:
 
 ## Raw BGG markup
 
-Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is also possible to **directly insert many BGG markup constructs** in the Markdown source (e.g. `[q="lebigot"]…[/q]`, in most cases). 
+Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is therefore also possible to **directly insert many BGG markup constructs** in the Markdown source (e.g. `[q="lebigot"]…[/q]`, in most cases). 
 
 ## Limitations
 
