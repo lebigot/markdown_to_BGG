@@ -102,7 +102,7 @@ python md_to_bgg.py your_file.md
 ```
 python md_to_bgg.py your_file.md > your_file.bgg
 ```
-On a recent enough macOS, you may also copy it to the **clipboard**, for easy pasting into boardgamegeek.com:
+On a recent enough macOS, you may also copy the BGG markup directly to the **clipboard**, for easy pasting into boardgamegeek.com:
 ```
 python md_to_bgg.py your_file.md | pbcopy
 ```
