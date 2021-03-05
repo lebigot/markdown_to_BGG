@@ -17,8 +17,8 @@
 Many common Markdown constructs are supported:
 
 - headers—but only levels 1 (`#`) and 2 (`##`)—,
-- emphasis (`_important_`…),
-- strong emphasis (`**very important**`…),
+- BGG italics (`_important_`…),
+- BGG bold (`**very important**`…),
 - quotes (`> …`),
 - lists (numbered or not),
 - links (`[search engine](https://google.com)`, with the exact same syntax used for links to BGG itself).
@@ -37,6 +37,11 @@ will thus automatically produce:
 ## Extended Markdown
 
 `md_to_bgg.py` extends Markdown so as to handle some specificities of the BGG markup.
+
+### Strikethrough
+
+Strikethrough text follows the [GitHub Flavored Markdown
+syntax](https://github.github.com/gfm/#strikethrough-extension-) (`~~…~~`).
 
 ### Automatic link name
 
