@@ -41,7 +41,8 @@ will thus automatically produce:
 ### Strikethrough
 
 Strikethrough text follows the [GitHub Flavored Markdown
-syntax](https://github.github.com/gfm/#strikethrough-extension-) (`~~…~~`).
+syntax](https://github.github.com/gfm/#strikethrough-extension-) (double
+tilde: `~~…~~`).
 
 ### Automatic link name
 
