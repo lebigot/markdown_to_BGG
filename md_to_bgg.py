@@ -18,6 +18,15 @@ __version__ = "0.9.1"
 # Regexp for an optional link text ("[link text]"):
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>.*?)\])?'
 
+class Strikethrough(InlineElement):
+    """
+    Parse strikethrough (as in GitHub Flavored Markup).
+    """
+
+    pattern = "~~(.+?)~~"
+    priority = 4
+    parse_children = True
+
 
 class InternalLinkLongForm(InlineElement):
     """
@@ -131,7 +140,8 @@ class BGGRenderer:
     Intended to be used in a marko extension to MarkdownRenderer.
     """
 
-    # The code below is inspired by the source code for MarkdownRenderer:
+    # The code below is inspired by the source code for marko's
+    # MarkdownRenderer:
 
     def render_list(self, element):
         """
@@ -175,6 +185,9 @@ class BGGRenderer:
 
     def render_strong_emphasis(self, element):
         return BGG_wrap("b", self.render_children(element))
+
+    def render_strikethrough(self, element):
+        return BGG_wrap("-", self.render_children(element))
 
     def render_link(self, element):
         # Titles are not handled by the BGG markup and are therefore ignored:
@@ -243,9 +256,9 @@ class BGGRenderer:
 # bundled together, which makes more sense:
 class BGGExtension:
 
-    elements = [InternalLinkLongForm,
-                InternalImageLongForm, ExternalImage,
-                YouTubeLongForm]
+    elements = [
+        Strikethrough, InternalLinkLongForm, InternalImageLongForm,
+        ExternalImage, YouTubeLongForm]
 
     renderer_mixins=[BGGRenderer]
 
