@@ -126,7 +126,8 @@ def BGG_wrap(code, contents, code_value=None):
     The output is the following BGG markup construct:
 
     [<code>=<code_value>]<contents>[/<code>], where the "=…" part is not
-    included if code_value is None.
+    included if code_value is None. The contents is converted to its string
+    representation, if needed.
     """
     return f"[{code}{{}}]{contents}[/{code}]".format(
         "" if code_value is None else "={}".format(code_value))
@@ -250,6 +251,12 @@ class BGGRenderer:
         element.video_ID must contain the YouTube ID of the video.
         """
         return "[youtube={}]".format(element.video_ID)
+
+    def render_code_span(self, element):
+        text = element.children
+        if text.startswith("`") or text.endswith("`"):
+            return f"`` {text} ``"
+        return BGG_wrap("c", element.children)
 
 
 # We register the BGG markdown extension: the parser and the renderer are thus
