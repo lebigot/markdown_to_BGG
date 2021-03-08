@@ -130,7 +130,7 @@ def BGG_wrap(code, contents, code_value=None):
     representation, if needed.
     """
     return f"[{code}{{}}]{contents}[/{code}]".format(
-        "" if code_value is None else "={}".format(code_value))
+        "" if code_value is None else f"={code_value}")
 
 
 # Marko renderer (extension):
@@ -153,7 +153,7 @@ class BGGRenderer:
         result = []
         if element.ordered:
             for (num, child) in enumerate(element.children, element.start):
-                with self.container(f"{num}. ", " " * (len(str(num))+2)):
+                with self.container(f"{num}. ", ' '*(len(str(num))+2)):
                     result.append(self.render(child))
         else:
             for child in element.children:
