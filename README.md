@@ -87,7 +87,7 @@ Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is therefo
 
 # Usage
 
-You can convert any file directly with
+You can convert any Markdown file directly with
 ```
 python md_to_bgg.py your_file.md
 ```
