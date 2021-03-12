@@ -135,7 +135,7 @@ def BGG_wrap(code, contents, code_value=None):
 # Marko renderer (extension):
 class BGGRenderer:
     """
-    Renders many Markdown elements into boardgamegeek.com markup.
+    Render many Markdown elements into boardgamegeek.com markup.
 
     Intended to be used in a marko extension to MarkdownRenderer.
     """
