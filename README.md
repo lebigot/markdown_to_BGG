@@ -85,19 +85,6 @@ Most of the BGG markup syntax is left untouched by `md_to_bgg.py`: it is therefo
 
 **Some of the Markdown syntax** is not converted to BGG markup, and is instead **left essentially as is**. If you expect some of the Markdown syntax to produce some specific BGG markup which is not currently covered, don't hesitate to **open an Issue** on GitHub. In any case, **raw BGG markup** can often be used directly in the Markdown source in order to get the desired effect.
 
-# Requirements
-
-`md_to_bgg.py` requires Python 3.6+.
-
-# Installation
-
-`md_to_bgg.py` depends on the **[marko](https://github.com/frostming/marko) Markdown parser**, so you need to have it installed:
-```
-pip install marko
-```
-
-The `md_to_bgg.py` **script** itself can simply be **[directly downloaded](md_to_bgg.py)** (select the **"Raw" version** with the button on top).
-
 # Usage
 
 You can convert any file directly with
@@ -113,4 +100,17 @@ On a recent enough macOS, you may also copy the BGG markup directly to the **cli
 ```
 python md_to_bgg.py your_file.md | pbcopy
 ```
+
+# Requirements
+
+`md_to_bgg.py` requires Python 3.6+.
+
+# Installation
+
+`md_to_bgg.py` depends on the **[marko](https://github.com/frostming/marko) Markdown parser**, so you need to have it installed:
+```
+pip install marko
+```
+
+The `md_to_bgg.py` **script** itself can simply be **[directly downloaded](md_to_bgg.py)** (select the **"Raw" version** with the button on top).
 
