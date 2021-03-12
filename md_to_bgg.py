@@ -275,9 +275,9 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    markdown = marko.Markdown(
+    parse_and_render = marko.Markdown(
         renderer=marko.md_renderer.MarkdownRenderer, extensions=[BGGExtension])
 
     with open(args.input_file) as input_file:
-        print(markdown(input_file.read()))
+        print(parse_and_render(input_file.read()))
 
