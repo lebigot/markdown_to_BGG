@@ -12,7 +12,7 @@ import marko
 import marko.md_renderer
 from marko.inline import InlineElement
 
-__version__ = "0.9.1"
+__version__ = "0.9.2"
 
 # Regexp for an optional link text ("[link text]"):
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>.*?)\])?'
