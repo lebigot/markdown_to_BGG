@@ -49,7 +49,9 @@ class InternalLinkLongForm(InlineElement):
         '/(?P<link_type>\S*?)/(?P<object_ID>\d+)\S*?'
         '\)')
 
-    parse_children = True  # We want the text to be rendered too (italics…)
+    # We want the text to be rendered too (italics…).
+    # !! Does this interpret the URL as Markdown as well, which would not be good?
+    parse_children = True
 
     priority = 6
 
