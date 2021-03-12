@@ -23,7 +23,6 @@ class Strikethrough(InlineElement):
     """
     Parse strikethrough (as in GitHub Flavored Markup).
     """
-
     pattern = "~~(.+?)~~"
     priority = 4
     parse_children = True
@@ -39,7 +38,6 @@ class InternalLinkLongForm(InlineElement):
 
     The text in front can be fully omitted (square brackets included).
     """
-
     pattern = OPT_LINK_TEXT + (
 
         # We want the _last_ link type and ID, so we do a greedy search (but
@@ -69,7 +67,6 @@ class InternalImageLongForm(InlineElement):
 
     Note the optional size at the end.
     """
-    
     pattern = (
         "!\("
         "https?://\S*?boardgamegeek.com\S*?"
@@ -93,7 +90,6 @@ class ExternalImage(InlineElement):
     Example:
     !(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
     """
-
     pattern = "!\((?P<image_URL>\S*?)\)"
 
     def __init__(self, match):
@@ -108,7 +104,6 @@ class YouTubeLongForm(InlineElement):
     Have a look at this:
     (https://www.youtube.com/watch?v=x-J2KzQb5lI)
     """
-
     pattern = (
         "\("
         # YouTube can have URLs like https://youtu.be…:
@@ -141,7 +136,6 @@ class BGGRenderer:
 
     Intended to be used in a marko extension to MarkdownRenderer.
     """
-
     # The code below is inspired by the source code for marko's
     # MarkdownRenderer:
 
@@ -213,7 +207,6 @@ class BGGRenderer:
         element.link_parts, with keys link_text (which can be None), link_type,
         object_ID.
         """
-
         link_parts = element.link_parts  # Shortcut
 
         return BGG_wrap(
@@ -229,7 +222,6 @@ class BGGRenderer:
         dictionary, with keys image_ID and size (which can be None, for the
         default size).
         """
-
         image_info = element.image_info  # Shortcut
 
         return "[imageid={}{}]".format(
@@ -263,7 +255,9 @@ class BGGRenderer:
 # We register the BGG markdown extension: the parser and the renderer are thus
 # bundled together, which makes more sense:
 class BGGExtension:
-
+    """
+    marko extension for BGG markup.
+    """
     elements = [
         Strikethrough, InternalLinkLongForm, InternalImageLongForm,
         ExternalImage, YouTubeLongForm]
