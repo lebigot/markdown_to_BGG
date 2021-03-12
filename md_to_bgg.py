@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Converter from markdown (CommonMark) to boardgamegeek.com (BGG) markup.
+Converter from markdown (CommonMark) with extensions to boardgamegeek.com (BGG) markup.
 
 Not all markdown is converted, but many common BGG constructs are supported.
 
