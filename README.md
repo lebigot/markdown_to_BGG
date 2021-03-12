@@ -45,7 +45,7 @@ Strikethrough text follows the [GitHub Flavored Markdown
 syntax](https://github.github.com/gfm/#strikethrough-extension-) (double
 tilde: `~~…~~`).
 
-### Automatic link name
+### Automatic link names
 
 BGG can **automatically insert the names** of board games, forum threads, etc., which is something not handled by standard Markdown links. `md_to_bgg.py` therefore extends Markdown by **removing the link text part** (`[…]`), for links to _BGG_ contents:
 ```
