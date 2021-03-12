@@ -5,6 +5,8 @@ Converter from markdown (CommonMark) to boardgamegeek.com (BGG) markup.
 
 Not all markdown is converted, but many common BGG constructs are supported.
 
+Use the -h flag for usage information.
+
 (c) 2021 Eric O. LEBIGOT <eric.lebigot@normalesup.org>.
 """
 
