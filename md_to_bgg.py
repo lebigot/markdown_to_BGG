@@ -4,7 +4,6 @@
 Converter from markdown (CommonMark) to boardgamegeek.com (BGG) markup.
 
 Not all markdown is converted, but many common BGG constructs are supported.
-The associated supported_syntax.txt file documents the supported syntax.
 
 (c) 2021 Eric O. LEBIGOT <eric.lebigot@normalesup.org>.
 """
