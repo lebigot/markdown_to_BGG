@@ -39,7 +39,6 @@ class InternalLinkLongForm(InlineElement):
     The text in front can be fully omitted (square brackets included).
     """
     pattern = OPT_LINK_TEXT + (
-
         # We want the _last_ link type and ID, so we do a greedy search (but
         # without bleeding onto the next kind of link on the same line).
         # We also make provision for different possible boardgamegeek URLs 
