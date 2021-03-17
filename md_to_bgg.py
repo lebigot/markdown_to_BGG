@@ -40,13 +40,13 @@ class InternalLinkLongForm(InlineElement):
     """
     pattern = OPT_LINK_TEXT + (
         # We want the _last_ link type and ID, so we do a greedy search (but
-        # without bleeding onto the next kind of link on the same line).
+        # without bleeding onto the next link on the same line).
         # We also make provision for different possible boardgamegeek URLs 
         # (https://boardgamegeek.com, https://www.boardgamegeek.com, etc.).
         '\(https?://.*?boardgamegeek\.com[^)\s]*'
         
         # The end of the regexp is here for links like …/article/123#123:
-        '/(?P<link_type>\S*?)/(?P<object_ID>\d+)\S*?'
+        '/(?P<link_type>\S+?)/(?P<object_ID>\d+)\S*?'
         '\)')
 
     parse_children = True  # We want the text to be rendered too (italics…)
