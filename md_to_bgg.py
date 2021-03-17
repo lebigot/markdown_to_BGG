@@ -261,7 +261,7 @@ class BGGExtension:
         Strikethrough, InternalLinkLongForm, InternalImageLongForm,
         ExternalImage, YouTubeLongForm]
 
-    renderer_mixins=[BGGRenderer]
+    renderer_mixins = [BGGRenderer]
 
 
 if __name__ == "__main__":
