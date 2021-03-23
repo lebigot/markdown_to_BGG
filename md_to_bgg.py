@@ -271,7 +271,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=(
             "Convert extended CommonMark markdown to boardgamegeek.com markup."
-            " See https://github.com/lebigot/markdown_to_BGG for details.")
+            " See https://github.com/lebigot/markdown_to_BGG for details."))
     parser.add_argument("input_file", help="Input markdown file")
 
     args = parser.parse_args()
