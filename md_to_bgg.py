@@ -242,7 +242,7 @@ class BGGRenderer:
 
         element.video_ID must contain the YouTube ID of the video.
         """
-        return "[youtube={}]".format(element.video_ID)
+        return f"[youtube={element.video_ID}]"
 
     def render_code_span(self, element):
         text = element.children
