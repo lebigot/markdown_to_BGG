@@ -42,7 +42,7 @@ will thus automatically produce:
 
 ### Strikethrough
 
-Strikethrough text uses a double tilde: `~~…~~` (this follows the [GitHub Flavored Markdown syntax](https://github.github.com/gfm/#strikethrough-extension-).
+Strikethrough text uses a double tilde: `~~…~~` (this follows the [GitHub Flavored Markdown syntax](https://github.github.com/gfm/#strikethrough-extension-)).
 
 ### Automatic link names
 
