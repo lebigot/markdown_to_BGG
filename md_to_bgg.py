@@ -164,7 +164,7 @@ class BGGRenderer:
 
         # There is no concept of header in BGG markup, so we simulate this by
         # using the default Large and Huge font sizes:
-        size = {1: 24, 2: 18}[element.level]  # Maximum 2 levels!
+        size = {1: 24, 2: 18, 3: 14, 4: 12, 5: 11, 6: 10}[element.level]  # All 6 levels!
 
         result = "".join([
             self._prefix,
