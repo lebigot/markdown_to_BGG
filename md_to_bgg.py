@@ -43,11 +43,11 @@ class InternalLinkLongForm(InlineElement):
         # without bleeding onto the next link on the same line).
         # We also make provision for different possible boardgamegeek URLs 
         # (https://boardgamegeek.com, https://www.boardgamegeek.com, etc.).
-        '\(https?://.*?boardgamegeek\.com[^)\s]*'
+        r'\(https?://.*?boardgamegeek\.com[^)\s]*'
         
         # The end of the regexp is here for links like …/article/123#123:
-        '/(?P<link_type>\S+?)/(?P<object_ID>\d+)\S*?'
-        '\)')
+        r'/(?P<link_type>\S+?)/(?P<object_ID>\d+)\S*?'
+        r'\)')
 
     parse_children = True  # We want the text to be rendered too (italics…)
 
@@ -67,11 +67,11 @@ class InternalImageLongForm(InlineElement):
     Note the optional size at the end.
     """
     pattern = (
-        "!\("
-        "https?://\S*?boardgamegeek.com\S*?"
-        "/image/(?P<image_ID>\d+)\S*?"
-        "(?: +(?P<size>\S+))?"
-        "\)")
+        r"!\("
+        r"https?://\S*?boardgamegeek.com\S*?"
+        r"/image/(?P<image_ID>\d+)\S*?"
+        r"(?: +(?P<size>\S+))?"
+        r"\)")
 
     # We do not want this to be parsed as "!" followed by an internal BGG link
     # (InternalLinkLongForm), because the image URL doesn't map in the same way
@@ -89,7 +89,7 @@ class ExternalImage(InlineElement):
     Example:
     !(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
     """
-    pattern = "!\((?P<image_URL>\S*?)\)"
+    pattern = r"!\((?P<image_URL>\S*?)\)"
 
     def __init__(self, match):
         self.image_URL = match.group("image_URL")
@@ -104,11 +104,11 @@ class YouTubeLongForm(InlineElement):
     (https://www.youtube.com/watch?v=x-J2KzQb5lI)
     """
     pattern = (
-        "\("
+        r"\("
         # YouTube can have URLs like https://youtu.be…:
-        "https?://\S*?youtu\S*?"
-        "/watch\?v=(?P<video_ID>\S+?)"
-        "\)")
+        r"https?://\S*?youtu\S*?"
+        r"/watch\?v=(?P<video_ID>\S+?)"
+        r"\)")
 
     def __init__(self, match):
         self.video_ID = match.group("video_ID")
