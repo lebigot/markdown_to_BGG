@@ -11,6 +11,7 @@ Use the -h flag for usage information.
 """
 
 import marko
+from marko.helpers import MarkoExtension
 import marko.md_renderer
 from marko.inline import InlineElement
 
@@ -253,16 +254,12 @@ class BGGRenderer:
 
 # We register the BGG markdown extension: the parser and the renderer are thus
 # bundled together, which makes more sense:
-class BGGExtension:
-    """
-    marko extension for BGG markup.
-    """
-    elements = [
+
+BGGExtension = MarkoExtension(
+    elements=[
         Strikethrough, InternalLinkLongForm, InternalImageLongForm,
-        ExternalImage, YouTubeLongForm]
-
-    renderer_mixins = [BGGRenderer]
-
+        ExternalImage, YouTubeLongForm],
+    renderer_mixins = [BGGRenderer])
 
 if __name__ == "__main__":
 
