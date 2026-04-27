@@ -7,7 +7,7 @@ Not all markdown is converted, but many common BGG constructs are supported.
 
 Use the -h flag for usage information.
 
-(c) 2021 Eric O. LEBIGOT <eric.lebigot@normalesup.org>.
+(c) 2021-2026 Eric O. LEBIGOT <eric.lebigot@normalesup.org>.
 """
 
 import marko
@@ -15,7 +15,7 @@ from marko.helpers import MarkoExtension
 import marko.md_renderer
 from marko.inline import InlineElement
 
-__version__ = "0.9.2"
+__version__ = "0.9.3"
 
 # Regexp for an optional link text ("[link text]"):
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>.*?)\])?'
@@ -164,8 +164,9 @@ class BGGRenderer:
         # The code is partially lifted from MarkdownRenderer.
 
         # There is no concept of header in BGG markup, so we simulate this by
-        # using the default Large and Huge font sizes:
-        size = {1: 24, 2: 18}[element.level]  # Maximum 2 levels!
+        # using the default Huge, Large and 14 font sizes (which is larger
+        # than the normal font size of 10 found at https://boardgamegeek.com/wiki/page/Forum_Formatting#toc17):
+        size = {1: 24, 2: 18, 3: 14}[element.level]  # Maximum 3 levels!
 
         result = "".join([
             self._prefix,

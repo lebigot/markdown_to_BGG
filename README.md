@@ -17,7 +17,7 @@
 
 Many common Markdown constructs are supported:
 
-- headers—but only levels 1 (`#`) and 2 (`##`)—,
+- headers—but only levels 1 (`#`), 2 (`##`) and 3 (`###`)—,
 - BGG italics (`_important_`…),
 - BGG bold (`**very important**`…),
 - BGG monospace (`` `inline code` ``),
