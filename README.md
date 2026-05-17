@@ -6,7 +6,7 @@
 
 1. You can write BGG posts and have a **live preview** (through your Markdown editor).
 1. Markdown is **easier to use** than the [BGG markup](https://boardgamegeek.com/wiki/page/Forum_Formatting), which is **quite verbose**.
-1. The BGG markup requires **some cumbersome editing** (like when extracting the numeric identifier of a board game from its full URL), which is eschewed by `md_to_bgg.py`.
+1. The BGG markup requires either **lots of clicks**, or **some cumbersome editing** (like extracting the numeric identifier of a board game from its full URL), which is eschewed by `md_to_bgg.py`.
 1. Markdown is a **much more common** format.
 
 # Markdown syntax
