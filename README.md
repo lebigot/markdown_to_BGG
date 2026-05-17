@@ -70,7 +70,7 @@ Large BGG image: !(https://boardgamegeek.com/image/2355823/clockwork-wars large)
 
 ### Embedded YouTube videos
 
-**YouTube** videos on BGG **don't have any alternate text**, so, similarly to images, their Markdown syntax has **no link text part**:
+**Embedded YouTube** videos on BGG **don't have any alternate text**, so, similarly to images, their Markdown syntax has **no link text part**:
 ```
 Nice intro to Eldritch Horror:
 (https://www.youtube.com/watch?v=x-J2KzQb5lI)

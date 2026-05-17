@@ -1,0 +1,117 @@
+This document illustrates and describes the Markdown syntax supported by this
+boardgamegeek.com (BGG) markup rendering program.
+
+The basic syntax follows the [CommonMark
+markdown](https://spec.commonmark.org/0.29) syntax.
+
+
+# Basic Markdown
+
+Headers: only level 1 (#) and level 2 (##) headers are supported.
+
+Emphasis: this is _important_ (rendered as italics).
+
+Strong emphasis: this is **very important** (rendered as bold).
+
+BGG monospace / code: `code`.
+
+Lists are not supported on BGG, and are left as is:
+
+* First item
+* Second item
+
+Numbered list are not supported on BGG either. They are rendered as a
+continuous sequence of numbers, starting with the first number. Thus,
+
+1. First item
+1. Second item
+
+will automatically produce:
+
+1. First item
+2. Second item
+
+Quotes follow the standard Markdown syntax:
+
+> This is an example
+> where the source lines are automatically concatenated in the output.
+> 
+> Any line that ends like this one with two spaces  
+> will not be concatenated with the following one, as is normal in Markdown.
+
+[External links](https://google.com) follow the usual Markdown syntax.
+
+
+# Paragraphs
+
+In Markdown, paragraphs can be written on many lines, an generally result in a
+single rendered paragraph (typically as if line breaks were replaced by
+spaces). This renderer follows the same convention. Thus, this paragraph, which
+is written on multiple lines, will be rendered as a single paragraph on BGG
+(with line breaks that appear on screen at generally different positions.
+
+As in Markdown, if a line ends with 2 blank spaces, then a line break at its
+end is kept in the rendered output:
+
+This line will remain by itself as it ends with two blank spaces.  
+Second line of the same paragraph, that doesn't end with blank spaces.
+This line will be concatenated with the previous one.
+
+# Simple extensions
+
+Example of ~~strikethrough **nested text**~~ (from GitHub Markdown).
+
+# Internal BGG links
+
+
+## Full URL form
+
+Internal links can be entered as standard Markdown links:
+
+This is a [**great** answer](https://boardgamegeek.com/thread/2600763/article/36994502#36994502).
+
+Names (like the name of a board game) are inserted automatically, if omitted:
+
+This game is similar to
+(https://boardgamegeek.com/boardgame/224517/brass-birmingham).
+
+
+# Images and videos
+
+Images and videos can be inserted with a syntax similar to that of links (with
+a full URL).
+
+Images use a syntax similar to that of CommonMark markdown, except that the
+alternate text part ("[text]") is simply absent (like when inserting a link to
+a boardgame without specifying the name of the boardgame). In fact, BGG doesn't
+provider alternate text for images.
+
+
+## Full URL form
+
+Internal BGG images can be followed by their [BGG
+size](https://boardgamegeek.com/wiki/page/Wiki_Image_Sizes#).
+
+Internal BGG image:
+
+Default size: !(https://boardgamegeek.com/image/2355823/clockwork-wars)  
+Large size: !(https://boardgamegeek.com/image/2355823/clockwork-wars large)
+
+Technical note: the exclamation mark is there to explicitly indicate that a
+link points to an image, so that users can also write regular URLs inside
+parentheses (which are rendered as is). Example:
+
+You can also do a direct search (https://www.google.com).
+
+(If there had been a "!" prefix, this would mean that the address pointed to an
+image to be directly rendered in the BGG page, instead.)
+
+External images:
+
+!(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
+Embedded YouTube video:
+
+This is a nice-looking introduction to the game:
+
+(https://www.youtube.com/watch?v=x-J2KzQb5lI)
