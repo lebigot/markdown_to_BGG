@@ -1,0 +1,10 @@
+This file is in BGG-extended Markdown. It is meant to be used for unit testing.
+
+Let's try to trip the BGG renderer by having multiple links in a single line (the difficulty is to not believe that the link URL goes from the first opening parenthesis to the last closing one):
+
+This is a [url=http://first.com]first link[/url] and a [url=https://scnd.com]second link[/url].
+
+Links to BGG are handled separately, so let's test this too:
+
+Jacinyth City is a 1--3 player game based on P.D. Magnus' [boardgame=39290]Jacynth[/boardgame] and Andrew Looney's [boardgame=35003]Zark City[/boardgame] (a simpler [boardgame=10996]Zarcana[/boardgame]-style game for a traditional deck of cards).  I devised it after a discussion on my [geeklist=333402]geeklist of Zarcana-type games[/geeklist].  I've also made a more Zark City-like Decktet game, [url=http://mcdemarco.net/games/decktet/decktown/]Deck Town[/url], [url=http://mcdemarco.net/games/decktet/dectana/]deciphered[/url] [boardgame=60015]Dectana[/boardgame], and am playtesting yet another Zarcana-type game for the Decktet.
+
