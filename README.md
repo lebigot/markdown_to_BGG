@@ -23,7 +23,7 @@ Many common Markdown constructs are supported:
 - BGG monospace (`` `inline code` ``),
 - quotes (`> …`),
 - lists (numbered or not),
-- links (`[search engine](https://google.com)`, with the exact same syntax used for links to BGG itself).
+- links (`[search engine](https://google.com)`, including for links to BGG itself).
 
 Lists are left untouched (as the BGG markup doesn't support them), except for numbered lists, which are automatically numbered in BGG markup:
 ```
