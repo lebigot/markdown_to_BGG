@@ -42,10 +42,10 @@ class InternalLinkLongForm(InlineElement):
     pattern = OPT_LINK_TEXT + (
         # We want the _last_ link type and ID, so we do a greedy search (but
         # without bleeding onto the next link on the same line).
-        # We also make provision for different possible boardgamegeek URLs 
+        # We also make provision for different possible boardgamegeek URLs
         # (https://boardgamegeek.com, https://www.boardgamegeek.com, etc.).
         r'\(https?://.*?boardgamegeek\.com[^)\s]*'
-        
+
         # The end of the regexp is here for links like …/article/123#123:
         r'/(?P<link_type>\S+?)/(?P<object_ID>\d+)\S*?'
         r'\)')
@@ -98,7 +98,9 @@ class ExternalImage(InlineElement):
 
 class YouTubeLongForm(InlineElement):
     """
-    Parse a full YouTube URL.
+    Parse a full YouTube "watch" URL.
+
+    "playlist" URLs are not handled: they  are not handled by BGG in any special way.
 
     Example:
     Have a look at this:
@@ -143,7 +145,7 @@ class BGGRenderer:
         """
         Render both ordered and unordered lists.
 
-        Ordered lists are numbered sequentially. 
+        Ordered lists are numbered sequentially.
         """
         result = []
         if element.ordered:
@@ -174,7 +176,7 @@ class BGGRenderer:
             "\n"])
 
         self._prefix = self._second_prefix
-        
+
         return result
 
     def render_emphasis(self, element):
