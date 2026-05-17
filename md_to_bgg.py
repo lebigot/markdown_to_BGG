@@ -15,10 +15,15 @@ from marko.helpers import MarkoExtension
 import marko.md_renderer
 from marko.inline import InlineElement
 
-__version__ = "0.9.3"
+__version__ = "0.9.4"
 
 # Regexp for an optional link text ("[link text]"):
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>.*?)\])?'
+
+# We make provision for different possible boardgamegeek URLs
+# (https://boardgamegeek.com, https://www.boardgamegeek.com, etc.).
+BGG_URL_START = r'\(https?://(?:\w+\.)?boardgamegeek\.com'
+
 
 class Strikethrough(InlineElement):
     """
@@ -42,10 +47,7 @@ class InternalLinkLongForm(InlineElement):
     pattern = OPT_LINK_TEXT + (
         # We want the _last_ link type and ID, so we do a greedy search (but
         # without bleeding onto the next link on the same line).
-        # We also make provision for different possible boardgamegeek URLs
-        # (https://boardgamegeek.com, https://www.boardgamegeek.com, etc.).
-        r'\(https?://.*?boardgamegeek\.com[^)\s]*'
-
+        BGG_URL_START +
         # The end of the regexp is here for links like …/article/123#123:
         r'/(?P<link_type>\S+?)/(?P<object_ID>\d+)\S*?'
         r'\)')
@@ -69,7 +71,7 @@ class InternalImageLongForm(InlineElement):
     """
     pattern = (
         r"!\("
-        r"https?://\S*?boardgamegeek.com\S*?"
+        + BGG_URL_START +
         r"/image/(?P<image_ID>\d+)\S*?"
         r"(?: +(?P<size>\S+))?"
         r"\)")
@@ -168,7 +170,7 @@ class BGGRenderer:
         # There is no concept of header in BGG markup, so we simulate this by
         # using the default Huge, Large and 14 font sizes (which is larger
         # than the normal font size of 10 found at https://boardgamegeek.com/wiki/page/Forum_Formatting#toc17):
-        size = {1: 24, 2: 18, 3: 14}[element.level]  # Maximum 3 levels!
+        size = [24, 18, 14][element.level-1]  # Maximum 3 levels!
 
         result = "".join([
             self._prefix,
