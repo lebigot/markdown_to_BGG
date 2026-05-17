@@ -24,9 +24,11 @@ __version__ = "0.9.4"
 # added regex matches: 
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>[^\]]*)\])?'
 
-# We make provision for different possible boardgamegeek URLs
+# We make provision for different possible boardgamegeek URLs pointing
+# to BGG contents (not the main website itself, which is a regular URL)
 # (https://boardgamegeek.com, https://www.boardgamegeek.com, etc.).
-BGG_URL_START = r'\(https?://(?:\w+\.)?boardgamegeek\.com'
+# Note the starting parenthesis (Markdown link) and the absence of trailing "/":
+BGG_URL_LINK_START = r'\(https?://(?:\w+\.)?boardgamegeek\.com'
 
 
 class Strikethrough(InlineElement):
@@ -42,18 +44,24 @@ class InternalLinkLongForm(InlineElement):
     """
     Parse BGG internal links in long form.
 
-    Example of parsed link:
+    Example of parsed links:
 
+    - Case wherewe want the BGG markup to refer to the article, not the thread:
     [great answer](https://boardgamegeek.com/thread/2600763/article/36994502#36994502)
+
+    - Case with a final name in addition to the boardgame ID:
+    (https://boardgamegeek.com/boardgame/224517/brass-birmingham)
 
     The text in front can be fully omitted (square brackets included).
     """
-    pattern = OPT_LINK_TEXT + (
+    pattern = (
+        OPT_LINK_TEXT
         # We want the _last_ link type and ID, so we do a greedy search (but
         # without bleeding onto the next link on the same line).
-        BGG_URL_START +
+        + BGG_URL_LINK_START +
         # The end of the regexp is here for links like …/article/123#123:
-        r'/(?P<link_type>\S+?)/(?P<object_ID>\d+)\S*?'
+        #r'\S+?/(?P<link_type>[^/]+?)/(?P<object_ID>\d+)\S*?'
+        r'[^)]*/(?P<link_type>[^/]+)/(?P<object_ID>\d+)(#\d+)?\S*?'
         r'\)')
 
     parse_children = True  # We want the text to be rendered too (italics…)
@@ -74,8 +82,8 @@ class InternalImageLongForm(InlineElement):
     Note the optional size at the end.
     """
     pattern = (
-        r"!\("
-        + BGG_URL_START +
+        r"!"
+        + BGG_URL_LINK_START +
         r"/image/(?P<image_ID>\d+)\S*?"
         r"(?: +(?P<size>\S+))?"
         r"\)")

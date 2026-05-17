@@ -10,6 +10,8 @@ Emphasis: this is [i]important[/i] (rendered as italics).
 
 Strong emphasis: this is [b]very important[/b] (rendered as bold).
 
+BGG monospace / code: [c]code[/c].
+
 Lists are not supported on BGG, and are left as is:
 
 * First item
@@ -43,13 +45,17 @@ As in Markdown, if a line ends with 2 blank spaces, then a line break at its end
 This line will remain by itself as it ends with two blank spaces.
 Second line of the same paragraph, that doesn't end with blank spaces. This line will be concatenated with the previous one.
 
+[size=24]Simple extensions[/size]
+
+Example of [-]strikethrough [b]nested text[/b][/-] (from GitHub Markdown).
+
 [size=24]Internal BGG links[/size]
 
 [size=18]Full URL form[/size]
 
 Internal links can be entered as standard Markdown links:
 
-This is a [article=36994502][b]great[/b] answer[/article].
+This is a [article=36994502][b]great[/b] answer[/article]. This is the same [article=36994502]great answer[/article], but put on the same Markdown line, so as to try to trip the parser (considering the text between the first [c]([/c] and the [i]second[/i] [c])[/c] as a link would be a mistake).
 
 Names (like the name of a board game) are inserted automatically, if omitted:
 

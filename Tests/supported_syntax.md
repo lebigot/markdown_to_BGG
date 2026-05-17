@@ -68,7 +68,7 @@ Example of ~~strikethrough **nested text**~~ (from GitHub Markdown).
 
 Internal links can be entered as standard Markdown links:
 
-This is a [**great** answer](https://boardgamegeek.com/thread/2600763/article/36994502#36994502).
+This is a [**great** answer](https://boardgamegeek.com/thread/2600763/article/36994502#36994502). This is the same [great answer](https://boardgamegeek.com/thread/2600763/article/36994502#36994502), but put on the same Markdown line, so as to try to trip the parser (considering the text between the first `(` and the _second_ `)` as a link would be a mistake).
 
 Names (like the name of a board game) are inserted automatically, if omitted:
 
