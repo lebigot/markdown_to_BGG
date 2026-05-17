@@ -20,7 +20,7 @@ __version__ = "0.9.4"
 # Regexp for an optional link text ("[link text]"):
 #
 # We dont use .*? for the link text, because this regex is used with other regexes:
-# matching the final "]" might force the text to extend beyond a first "]", so that the
+# matching the final "]" might force the text to incorrectly extend beyond a first "]", so that the
 # added regex matches: 
 OPT_LINK_TEXT = r'(?:\[(?P<link_text>[^\]]*)\])?'
 
